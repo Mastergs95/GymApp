@@ -14,6 +14,12 @@
 npm start
 ```
 
+## Install Dependencies
+```sh
+frontdend { 'npm install nodemon morgan mongoose jsonwebtoken express dotenv cors bycriptjs' }
+backend   { 'npm install nodemon  mongoose express dotenv cors' }
+```
+
 ## Author
 
 👤 **Gonçalo Sousa**
