@@ -20,7 +20,7 @@ npm start
 
 * Website: https://linktr.ee/GoncaloS
 * Github: [@mastergs95](https://github.com/mastergs95)
-* LinkedIn: [@Gonçalo Diogo](https://linkedin.com/in/Gonçalo Diogo)
+* LinkedIn: [@Gonçalo Diogo](https://linkedin.com/in/GonçaloDiogo)
 
 ## Show your support
 
