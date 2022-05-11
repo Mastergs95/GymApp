@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Gym App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  </head>
+  <body onload="checkLogin()">
+      <section>
+          <header>
+              <a href="#" class="logo">Fitness</a>
+              <div class="toggleMenu" onclick="toggleMenu()"></div>
+              <ul class="navigation">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./TrainPlan.html">Training plan</a></li>
+                <li><a href="./FoodPlan.html">Food plan</a></li>
+                <li><a href="./trainer.html" id="trainers" style="display: none;">Trainers</a></li>
+                <li><a href="#" id="students" style="display: none;">Students</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="./Login/index.html" id="login" onclick="logout()"><i class="fa fa-user"></i>  Login</a></li>
+
+              </ul>
+          </header>
+          <div class="content">
+              <div class="contentBx">
+                  <h2>Build Perfect Body</br>
+                    With clean Mind</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula eros, mollis eu pellentesque sed,
+                        aliquam a purus. Etiam porta turpis ligula. Cras gravida semper tincidunt. Maecenas tempor vehicula quam, ac
+                        porttitor lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin hendrerit tristique augue ut molestie.
+                        Aenean sed pulvinar felis. Proin mollis volutpat libero ut posuere. Vestibulum vel placerat turpis. Quisque bibendum dictum enim, 
+                        non consectetur odio malesuada ac.</p>
+                        <a href="#">Get Started</a>
+              </div>
+
+          </div>
+          <ul class="sci">
+              <li><a href="#"><img src="./resources/facebook.png"></a></li>
+              <li><a href="#"><img src="./resources/instagram.png"></a></li>
+              <li><a href="#"><img src="./resources/twitter.png"></a></li>
+          </ul>
+      </section>
+
+      <script type="text/javascript">
+          function toggleMenu(){
+              const toggleMenu = document.querySelector('.toggleMenu');
+              const navigation = document.querySelector('.navigation');
+              toggleMenu.classList.toggle('active');
+              navigation.classList.toggle('active');
+          }
+      </script>
+
+          <script src="java.js"></script>
+  </body>
+</html>

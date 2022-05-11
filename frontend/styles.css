@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /*Foto de Li Sun no Pexels*/
+    background: url(./resources/background.jpg);
+    background-size: cover ;
+    background-position: center ;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 100px;
+}
+
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo
+{
+    position: relative;
+    font-size: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+header .navigation
+{
+    position: relative;
+    display: flex;
+}
+header .navigation li
+{
+    list-style: none;
+}
+header .navigation li a
+{
+    display: inline-block;
+    color: #fff;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+header .navigation li a:hover
+{
+    color: #03a9f4;
+}
+.content
+{
+    max-width: 600px;
+}
+
+.content .contentBx h2
+{
+    font-size: 4em;
+    color: #fff;
+    line-height: 1em;
+}
+
+.content .contentBx p
+{
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 300;
+    margin: 20px 0;
+}
+.content .contentBx a
+{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #03a9f4;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.sci
+{
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+}
+.sci li
+{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sci li a 
+{
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.5);
+
+}
+@media (max-width:991px)
+{
+    header
+    {
+        padding: 15px 40px;
+        background: url(./resources/background.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    section
+    {
+        padding: 40px;
+        
+    }
+    .content .contentBx h2
+    {
+        font-size: 2.5em;
+    }
+    .content .contentBx p
+    {
+        font-size: 1em;
+    }
+    header .navigation
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        z-index: 10;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    header .navigation.active
+    {
+        display: flex;
+    }
+    header .navigation li a
+    {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+    .toggleMenu
+    {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url(./resources/menu.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 11;
+    }
+    .toggleMenu.active
+    {
+        background: url(./resources/close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+}
+
+
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin: auto;
+    width: 60% !important; 
+    margin-top: 20px;
+  }
+  
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  table tr:hover {background-color: #ddd;}
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(0 123 255 / 50%);
+    color: white;
+  }
+
+
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+
+
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+      background-color: #f1f1f1;
+
+    }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+  #calendar{
+      display: none;
+  }
+

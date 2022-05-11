@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Gym App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+  <body onload="checkLogin()">
+
+    <section>
+      <header>
+        <a href="#" class="logo">Fitness</a>
+        <div class="toggleMenu" onclick="toggleMenu()"></div>
+        <ul class="navigation">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./TrainPlan.html">Training plan</a></li>
+          <li><a href="./FoodPlan.html">Food plan</a></li>
+          <li><a href="./trainer.html" id="trainers" style="display: none;">Trainers</a></li>
+          <li><a href="#" id="students" style="display: none;">Students</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="./Login/index.html" id="login" onclick="logout()"><i class="fa fa-user"></i>  Login</a></li>
+
+        </ul>
+      </header>
+
+          <style>
+            .myDiv {
+              color: black;
+              border-radius: 12px;
+              height: 1000px;
+              width: 150vh;
+              background-color: white;    
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 50px;
+              opacity: 0.8;
+            }
+          </style>
+            
+            
+            
+            
+            <div class="myDiv" id="myDiv">
+              <h2 style="margin-top: 15px">Start define a Food Plan</h2>
+              <p>Don´t forget to save your food plan</p>
+
+            <input id="numberOfWeeks" type="number" min="1"  oninput="this.value = 
+              !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of Weeks"> 
+
+              <button style="width: 70px" id="startPlan" onclick="startPlan()">Start</button>
+            </div>
+
+            <script src="FoodPlan.js" defer></script>
+            <script src="java.js" defer></script>
+
+
+    </section>
+  </body>
+</html>
