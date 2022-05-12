@@ -2,23 +2,55 @@ const User = require('../models/User')
 const bcrypt= require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
+
+
+
+
+
 const register = (req,res, next)=>{
-    bcrypt.hash(req.body.password,10, function(err, hashedPass){
+
+    
+
+    bcrypt.hash(req.body.password,10, async function(err, hashedPass){
         if(err){
             res.json({
-                error:err
+                error:'Password is required'
             })
         }
+        const{name,email,role}=req.body
+
         let user = new User({
+
             name: req.body.name,
+            lastName:req.body.lastName,
             email: req.body.email,
-            password: hashedPass
-    
+            password: hashedPass,
+            role: req.body.role,
+
         })
+
+        if(!name){
+            res.status(422).json({error:'Name is required'})
+            return
+        }
+
+        if(!email){
+            res.status(422).json({error:'Email is required'})
+            return
+        } 
+        if(!role){
+            res.status(422).json({error:'Role is required'})
+            return
+        } 
+
+
         user.save()
+
         .then(user=>{
+
             res.json({
-                message:'User added successfully!'
+                message:'User added successfully!',
+                user
             })
         })
         .catch(error =>{
@@ -27,13 +59,17 @@ const register = (req,res, next)=>{
             })
         })
     })
+
 }
 
+
+
 const login = (req, res, next)=>{
-    var username = req.body.username
+    var email = req.body.email
     var password = req.body.password
 
-    User.findOne({$or: [{email:username},]}).then( user =>{
+
+    User.findOne({$or: [{email:email},]}).then( user =>{
         if(user){
             bcrypt.compare(password, user.password, function(err, result){
                 if(err){
@@ -46,7 +82,8 @@ const login = (req, res, next)=>{
                     res.json({
                         message: "Login successful!",
                         token,
-                        user:user.name
+                        name:user.name,
+                        id:user._id,
                     })
                 }else{
                     res.json({

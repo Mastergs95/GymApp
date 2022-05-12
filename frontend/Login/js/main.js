@@ -1,7 +1,4 @@
 
-
-
-
 function eyePass(){
   var first_click = true;
 
@@ -27,13 +24,14 @@ async function login(){
 }
 
 
-
+//Login and Create user by role
 function create(){
 
   let username=document.getElementById("user").value
   let password= document.getElementById("password-field").value
+  let role = document.getElementById("roles").value
 
-  fetch("http://localhost:4000/api/login",{
+  fetch("http://localhost:3000/api/users/login",{
     
     method: 'POST',
     headers:{
@@ -41,7 +39,7 @@ function create(){
       'Content-Type':'application/json'
     },
     body: JSON.stringify({
-      username: username,
+      email: username,
       password: password,
     })
   })
@@ -56,9 +54,13 @@ function create(){
     console.log(data)
 
     if(data.message=="Login successful!"){
+      
       sessionStorage.setItem('token', data.token);
-      sessionStorage.setItem('name', data.user);
-      window.location.replace("../index.html");
+      sessionStorage.setItem('name', data.name);
+      sessionStorage.setItem('id', data.id);
+      sessionStorage.setItem('role', role);
+      alert()
+      //window.location.replace("../index.html");
       alert(data.message)
       
 

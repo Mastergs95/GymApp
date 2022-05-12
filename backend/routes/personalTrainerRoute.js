@@ -8,29 +8,13 @@ const Students = require('../models/students')
 //Create
     router.post('/create', async(req,res)=>{
 
-        const{name, lastName, age, students}=req.body
+
         const Trainer = new PersonalTrainers({
-            name:req.body.name,
-            lastName:req.body.lastName,
-            age:req.body.age,
-            students: req.body.students,
+            roleName:"PersonalTrainer",
+            user:req.body.user
         })
 
         
-        
-
-         if(!name){
-            res.status(422).json({error:'Name is required'})
-            return
-        }
-
-        if(!lastName){
-            res.status(422).json({error:'Last Name is required'})
-            return
-        } 
-
-        
-
 
         try{
 
@@ -164,5 +148,7 @@ const Students = require('../models/students')
             res.status(500).json({error: error})
         }
     })
+
+
 
 module.exports=router

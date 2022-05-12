@@ -9,27 +9,13 @@ const { db } = require('../models/personalTrainers')
 //Create
 router.post('/create', async(req,res)=>{
 
-    const{name, lastName, age, height, weight}=req.body
 
     const student = new students({
-        name:req.body.name,
-        lastName:req.body.lastName,
-        age:req.body.age,
-        height:req.body.height,
-        weight:req.body.weight,
-        personalTrainer:req.body.personalTrainer
+        roleName:"Student",
+        user:req.body.user
 
     })
 
-     if(!name){
-        res.status(422).json({error:'Name is required'})
-        return
-    }
-
-    if(!lastName){
-        res.status(422).json({error:'Last Name is required'})
-        return
-    } 
 
     try{
 

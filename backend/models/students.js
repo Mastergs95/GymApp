@@ -1,13 +1,7 @@
 const mongoose = require('mongoose')
 
 const studentsSchema = mongoose.Schema({
-
-    name:String,
-    lastName:String,
-    age:Number,
-    height:Number,
-    weight:Number,
-    personalTrainer : [{ type: mongoose.Schema.Types.ObjectId, ref: 'personalTrainers' }]
+    user : [{ type: mongoose.Schema.Types.ObjectId, ref: 'users' }]
 });
 
 const Student = mongoose.model('Students',studentsSchema)
