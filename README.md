@@ -1,5 +1,5 @@
 
-<h1 align="center">Welcome to GymApp </h1>
+<h1 align="center">Welcome to <a href="https://mastergs95.github.io/GymApp/frontend/index.html">GymApp</a></h1>
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -23,6 +23,7 @@
  ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
 
 ```bash
 # Clone this repository
