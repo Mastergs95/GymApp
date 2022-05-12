@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  It´s a simple web app for help personal trainers and students in your daily routines
+  It's a simple web app for help personal trainers and students in your daily routines
 </p>
 
   ***
