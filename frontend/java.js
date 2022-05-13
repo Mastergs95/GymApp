@@ -5,115 +5,6 @@ function doGet(url){
     return request.responseText
 }
 
-function doPost(url){
-    let request = new XMLHttpRequest()
-    request.open("POST", url, false)
-    request.send()
-    return request.responseText
-}
-
-function createUserRole(){
-
-    let id=sessionStorage.getItem('id')
-    let role=sessionStorage.getItem('role')
-
-    alert("create user")
-
-    if(id){
-        alert("try create user")
-
-        if(role=="Ptrainer"){
-
-            try{
-                /* let trainer= doGet("http://localhost:3000/api/pTrainers/get/" + id)
-                console.log(trainer)
-                const trainerdata = JSON.parse(trainer) */
-
-            
-
-    
-                //if(trainerdata.msg=="User not found!"){
-    
-                    
-    
-                    alert("creating...")
-    
-                    fetch("http://localhost:3000/api/pTrainers/create",{
-      
-                        method: 'POST',
-                        headers:{
-                        'Accept': 'application/json',
-                        'Content-Type':'application/json'
-                        },
-                        body: JSON.stringify({
-                            user:id
-                        })
-                    })
-                    .then(response=>{
-                
-                        if(!response.ok){
-                        throw Error ("Error")
-                        }
-                        
-                        alert("success")
-                        console.log(response)
-                        return response.json()
-                    })
-
-    
-            /*     }else{
-                    alert("trainer already exist")
-                } */
-
-
-                    sessionStorage.removeItem('id')
-                
-                } catch(err){
-                    console.log(err)
-                }
-
-        }
-
-        if(role=="Student"){
-
-            try{
-    
-                    alert("creating...")
-    
-                    fetch("http://localhost:3000/api/students/create",{
-      
-                        method: 'POST',
-                        headers:{
-                        'Accept': 'application/json',
-                        'Content-Type':'application/json'
-                        },
-                        body: JSON.stringify({
-                            user:id
-                        })
-                    })
-                    .then(response=>{
-                
-                        if(!response.ok){
-                        throw Error ("Error")
-                        }
-                        
-                        alert("success")
-                        
-                        return response.json()
-                    })
-    
-                    sessionStorage.removeItem('id')
-                
-                } catch(err){
-                    console.log(err)
-                }
-
-        }
-            
-    }else{
-
-    }
-}
 
 
 function logout(){
@@ -125,7 +16,6 @@ function logout(){
             txt = "Bye!";
             sessionStorage.removeItem('name')
             sessionStorage.removeItem('token')
-            alert('session credentials deleted')
             window.location.replace="./Login/index.html"
           } else {
             alert("Welcome again")
@@ -146,18 +36,18 @@ function checkLogin(){
     console.log(token);
 
     if(token){
-        alert("logged")
-        if(id=="627d2d7203ce563e3a156fb7"){
+        if(id=="627e98d6dfe3636ae9d10d28"){
             document.getElementById("trainers").style.display="block"
             document.getElementById("students").style.display="block"
         }
         //document.getElementById("trainers").href="./trainer.html"
         document.getElementById("login").href=""
         document.getElementById("login").textContent=name
-        //createUserRole()
+        document.getElementById("login").style.animationName
+
         
-    }else{
-        alert("not logged")
+    }
+    else{
         window.location.replace("./Login/index.html")
     }
   }

@@ -1,8 +1,4 @@
 
-function rdsignup(){
-  window.location.replace="../Register/index.html"
-}
-
 function eyePass(){
   var first_click = true;
 
@@ -21,22 +17,18 @@ function eyePass(){
   }
 }
 
-async function login(){
-
-  const response= await fetch("http://localhost:3000/api/pTrainers/get")
-  const data = await response.json()
-}
 
 
 //Login and Create user by role
-function create(){
+function signup(){
 
+  let name=document.getElementById("name").value
+  let lastname=document.getElementById("lastname").value
   let username=document.getElementById("user").value
   let password= document.getElementById("password-field").value
-  let role = document.getElementById("roles").value
-  let name = sessionStorage.getItem('name')
 
-  fetch("http://localhost:3000/api/users/login",{
+
+  fetch("http://localhost:3000/api/users/register",{
     
     method: 'POST',
     headers:{
@@ -44,35 +36,52 @@ function create(){
       'Content-Type':'application/json'
     },
     body: JSON.stringify({
+      name:name,
+      lastname:lastname,
       email: username,
       password: password,
-      role:role,
-      name:name
     })
+
   })
   .then(response=>{
+    if(!name){
+      alert("Name is required!")
+    }
+    if(!lastname){
+      alert("Last Name is required!")
+    }
+    if(!username){
+      alert("Email is required!")
+    }
+    if(!password){
+      alert("Email is required!")
+    }
     if(!response.ok){
       throw Error ("Error")
     }
+
     return response.json()
   })
   .then(data=>{
 
     console.log(data)
 
-    if(data.message=="Login successful!"){
+    if(data.message=="User added successfully!"){
       
-      sessionStorage.setItem('token', data.token);
-      sessionStorage.setItem('name', data.name);
-      sessionStorage.setItem('id', data.id);
-      alert(data.message)
-      window.location.replace("../index.html");
+      sessionStorage.setItem('name', data.user.name);
 
-    }else if(data.message=="No user found!"){
+
+      alert()
+      //window.location.replace("../index.html");
       alert(data.message)
+      
+
+    }else if(data.message=="An error occurred!"){
+
+      alert(data.message+" Try with another email")
+
     }else{
       alert(data.message)
-    
     }
   })
   .catch(error=>{

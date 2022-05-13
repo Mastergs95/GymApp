@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Gym App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  </head>
+  <body onload="checkLogin()">
+      <section>
+          <header>
+              <a href="#" class="logo">Fitness</a>
+              <div class="toggleMenu" onclick="toggleMenu()"></div>
+              <ul class="navigation">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./TrainPlan.html">Training plan</a></li>
+                <li><a href="./FoodPlan.html">Food plan</a></li>
+                <li><a href="./trainer.html" id="trainers" style="display: none;">Trainers</a></li>
+                <li><a href="#" id="students" style="display: none;">Students</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+                <li><a href="./Login/index.html" id="login" onclick="logout()"><i class="fa fa-user"></i>  Login</a></li>
+
+              </ul>
+          </header>
+          <div class="content">
+            <style>
+                .myDiv {
+                  color: black;
+                  border-radius: 12px;
+                  height: 700px;
+                  width: 170vh;
+                  background-color: #f2f2f2;    
+                  text-align: center;
+                  margin-left: auto;
+                  margin-right: auto;
+                  margin-top: 70px;
+                  opacity: 1;
+                }
+              </style>
+                        
+                
+                
+                <div class="myDiv" id="myDiv">
+
+                    <style>
+                        body {font-family: Arial, Helvetica, sans-serif;}
+                        * {box-sizing: border-box;}
+                        
+                        input[type=text], select, textarea {
+                          width: 100%;
+                          padding: 12px;
+                          border: 1px solid #ccc;
+                          border-radius: 4px;
+                          box-sizing: border-box;
+                          margin-top: 6px;
+                          margin-bottom: 16px;
+                          resize: vertical;
+                        }
+                        
+                        input[type=submit] {
+                          background-color: #04AA6D;
+                          color: white;
+                          padding: 12px 20px;
+                          border: none;
+                          border-radius: 4px;
+                          cursor: pointer;
+                        }
+                        
+                        input[type=submit]:hover {
+                          background-color: #45a049;
+                        }
+                        
+                        .container {
+                          border-radius: 5px;
+                          background-color: #f2f2f2;
+                          padding: 20px;
+                        }
+                        </style>
+
+                        <body>
+                        <br>
+                        <br>
+                        <h3>Contact Us</h3>
+                        
+                        <div class="container">
+                          <form>
+                            <label for="fname">Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        
+                            <label for="lname">Subject</label>
+                            <select type="text" id="subject">
+                                <optgroup label="Suggestions">
+                                    <option>Performance</option>
+                                    <option>Design</option>
+                                    <option>Other</option>
+                                </optgroup>
+                                <optgroup label="Problems">
+                                    <option>Bugs</option>
+                                    <option>Credentials</option>
+                                    <option>Other</option>
+                                </optgroup>
+                                <optgroup label="Other Problem">
+                                    <option>Other problem</option>
+                                </optgroup>
+                            </select>
+                        
+                        
+                            <label for="subject">Message</label>
+                            <textarea id="message" name="subject" placeholder="Write your message.." style="height:200px;resize: none;"></textarea>
+                        
+                            <input type="submit" value="Submit" onclick="sendEmail()">
+                          </form>
+                        </div>
+                        
+                <br>
+          </div>
+
+
+      </section>
+
+      <footer>
+        <iframe src="./Footer/index.html" frameborder="0" width="1500px" scrolling="no" height="370px"></iframe>        
+      </footer>
+      
+
+      <script type="text/javascript">
+          function toggleMenu(){
+              const toggleMenu = document.querySelector('.toggleMenu');
+              const navigation = document.querySelector('.navigation');
+              toggleMenu.classList.toggle('active');
+              navigation.classList.toggle('active');
+          }
+      </script>
+
+          <script src="java.js"></script>
+          <script src="Contact.js"></script>
+  </body>
+</html>
