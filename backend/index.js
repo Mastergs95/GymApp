@@ -13,11 +13,13 @@ app.use(
 
 app.use(express.json())
 
+
 //Initial route
 app.get('/',(req,res)=>{
 
     res.json({msg: "Hello world!"})
 })
+
 
 //API routes
 const personalTrainersRoutes = require('./routes/personalTrainerRoute')
