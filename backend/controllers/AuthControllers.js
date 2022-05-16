@@ -4,14 +4,8 @@ const Students = require('../models/students')
 
 const bcrypt= require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const http = require('http')
 
-function testget(){
-    const data = http.get('http://localhost:3000/api/users/get')
-    console.log(data)
-    data = JSON.parse(data.body)
-    console.log(data.message)
-}
+
 
 
 

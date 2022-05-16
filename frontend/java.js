@@ -68,10 +68,10 @@ function createLineSt(user){
     let aDelete = document.createElement('a')
     let aEdit = document.createElement('a')
 
-    aDelete.href=("http://localhost:3000/api/pTrainers/delete/" + user._id)
+    aDelete.href=("http://35.180.234.134:3000/api/pTrainers/delete/" + user._id)
     aDelete.innerHTML="delete"
 
-    aEdit.href=("http://localhost:3000/api/pTrainers/update/" + user._id)
+    aEdit.href=("http://35.180.234.134:3000/api/pTrainers/update/" + user._id)
     aEdit.innerHTML="edit"
 
     tdName.innerHTML = user.name
@@ -111,7 +111,7 @@ function createLine(user){
     line.setAttribute("id","last")
     
 
-    student = doGet('http://127.0.0.1:3000/api/students/get/' + user.students)
+    student = doGet('http://35.180.234.134:3000/api/students/get/' + user.students)
 
 
     line.appendChild(tdid)
@@ -128,7 +128,7 @@ function createLine(user){
 
 function main(){
     let data="";
-    data = doGet("http://127.0.0.1:3000/api/pTrainers/get")
+    data = doGet("http://35.180.234.134/api/pTrainers/get")
     data = data.trim();
     const users = JSON.parse(data)
     
@@ -156,7 +156,7 @@ function main(){
 
 function testes(){
     let data="";
-    data = doGet("http://127.0.0.1:3000/api/pTrainers/get")
+    data = doGet("http://35.180.234.134:3000/api/pTrainers/get")
     data = data.trim();
     const users = JSON.parse(data)
     
@@ -187,7 +187,7 @@ function testes(){
 
 function testesSt(){
     let data="";
-    data = doGet("http://127.0.0.1:3000/api/pTrainers/get")
+    data = doGet("http://35.180.234.134:3000/api/pTrainers/get")
     data = data.trim();
     const users = JSON.parse(data)
 

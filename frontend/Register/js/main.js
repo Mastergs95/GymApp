@@ -28,7 +28,7 @@ function signup(){
   let password= document.getElementById("password-field").value
 
 
-  fetch("http://localhost:3000/api/users/register",{
+  fetch("http://35.180.234.134:3000/api/users/register",{
     
     method: 'POST',
     headers:{
@@ -54,7 +54,7 @@ function signup(){
       alert("Email is required!")
     }
     if(!password){
-      alert("Email is required!")
+      alert("Password is required!")
     }
     if(!response.ok){
       throw Error ("Error")
@@ -70,10 +70,9 @@ function signup(){
       
       sessionStorage.setItem('name', data.user.name);
 
-
-      alert()
-      //window.location.replace("../index.html");
       alert(data.message)
+
+      window.location.replace("../index.html");
       
 
     }else if(data.message=="An error occurred!"){
