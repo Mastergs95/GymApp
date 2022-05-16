@@ -20,7 +20,7 @@
   ***
 <img alt="GitHub stars" src="https://user-images.githubusercontent.com/83174230/167960249-921f37e5-8533-4345-902c-ff960086e331.png">
  
- ## How To Use
+ ## How To Use Locally
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
