@@ -4,10 +4,11 @@
   "description": "",
   "main": "forLogin.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm install nodemon morgan mongoose jsonwebtoken express dotenv cors bycriptjs"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gonçalo Sousa || goncalogsd@gmail.com",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
