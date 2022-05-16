@@ -30,18 +30,14 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 $ git clone https://github.com/Mastergs95/GymApp.git
 
 # Go into the repository
-$ cd GymApp
+$ cd GymApp/frontend
 
 # Install dependencies
 $ npm install
 
 # Run the app
-$ npm start
+$ ./index.html
 ```
-
-## Connection Credentials 
-
-> Create a file (.env) inside the two folders (backend, frontend) and enter your mongodb credentials.
 
 
 ## Author
