@@ -169,11 +169,8 @@ function testes(){
         line = document.createElement("a")
         line.setAttribute("id",element._id)
         line.setAttribute("class","ab")
-        //line.href="./simpleTrainer.html"
 
         line.innerHTML=names
-
-        
       //  line.href=("http://localhost:3000/api/pTrainers/get/" + element._id)
         
         var element = document.getElementById("dropdown");

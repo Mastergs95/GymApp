@@ -8,7 +8,6 @@ function verifyInput(){
     } else{
         
     }
-
 }
 
 function displayCalendar(){
@@ -27,6 +26,7 @@ function displayCalendar(){
             first_click = true;
         }
     }
+
 
 
 
