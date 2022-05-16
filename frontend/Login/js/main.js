@@ -23,7 +23,7 @@ function eyePass(){
 
 async function login(){
 
-  const response= await fetch("http://localhost:3000/api/pTrainers/get")
+  const response= await fetch("http://35.180.234.134:3000/api/pTrainers/get")
   const data = await response.json()
 }
 
@@ -36,7 +36,7 @@ function create(){
   let role = document.getElementById("roles").value
   let name = sessionStorage.getItem('name')
 
-  fetch("http://localhost:3000/api/users/login",{
+  fetch("http://35.180.234.134:3000/api/users/login",{
     
     method: 'POST',
     headers:{
