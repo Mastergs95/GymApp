@@ -19,6 +19,7 @@
 
   ***
 <img alt="GitHub stars" src="https://user-images.githubusercontent.com/83174230/167960249-921f37e5-8533-4345-902c-ff960086e331.png">
+
  
  ## How To Use Locally
 
@@ -46,12 +47,12 @@ $ ./index.html
 
 * Website: https://linktr.ee/GoncaloS
 * Github: [@mastergs95](https://github.com/mastergs95)
-* LinkedIn: [@Gonçalo Diogo](https://linkedin.com/in/GonçaloDiogo)
+* LinkedIn: [@Gonçalo Diogo](https://www.linkedin.com/in/gon%C3%A7alo-diogo-5843121b1)
 
 
 ## Show your support
 
-Give a ⭐️ if this project helped you!
+Give a ⭐️ if this project helped you! Or Contributing with your suggestions or bugs report [here](https://github.com/Mastergs95/GymApp/blob/main/CONTRIBUTING.md).
 
 ## License
 >You can check out the full license [here](https://github.com/Mastergs95/GymApp/blob/main/LICENSE)
