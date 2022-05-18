@@ -24,6 +24,19 @@ function logout(){
     }
 }
 
+// Input the username in input name of page (Contact.html)
+function contactName(){
+
+    let user = sessionStorage.getItem('name')
+    let input = document.getElementById('fname')
+    try{
+        input.value = user
+    }catch(error){
+        
+    }
+    
+}
+
 function checkLogin(){
     var token = "";
     var name="";
@@ -32,8 +45,7 @@ function checkLogin(){
     token = sessionStorage.getItem('token');
     name = sessionStorage.getItem('name');
     role = sessionStorage.getItem('role');
-
-    console.log(token);
+    contactName()
 
     if(token){
         if(id=="627e98d6dfe3636ae9d10d28"){
@@ -68,10 +80,10 @@ function createLineSt(user){
     let aDelete = document.createElement('a')
     let aEdit = document.createElement('a')
 
-    aDelete.href=("http://35.180.234.134:3000/api/pTrainers/delete/" + user._id)
+    aDelete.href=("https://rest-api-gym.herokuapp.com/api/pTrainers/delete/" + user._id)
     aDelete.innerHTML="delete"
 
-    aEdit.href=("http://35.180.234.134:3000/api/pTrainers/update/" + user._id)
+    aEdit.href=("https://rest-api-gym.herokuapp.com/api/pTrainers/update/" + user._id)
     aEdit.innerHTML="edit"
 
     tdName.innerHTML = user.name
@@ -111,7 +123,7 @@ function createLine(user){
     line.setAttribute("id","last")
     
 
-    student = doGet('http://35.180.234.134:3000/api/students/get/' + user.students)
+    student = doGet('https://rest-api-gym.herokuapp.com/api/students/get/' + user.students)
 
 
     line.appendChild(tdid)
@@ -128,7 +140,7 @@ function createLine(user){
 
 function main(){
     let data="";
-    data = doGet("http://35.180.234.134/api/pTrainers/get")
+    data = doGet("https://rest-api-gym.herokuapp.com/api/pTrainers/get")
     data = data.trim();
     const users = JSON.parse(data)
     
@@ -156,7 +168,7 @@ function main(){
 
 function testes(){
     let data="";
-    data = doGet("http://35.180.234.134:3000/api/pTrainers/get")
+    data = doGet("https://rest-api-gym.herokuapp.com/api/pTrainers/get")
     data = data.trim();
     const users = JSON.parse(data)
     
@@ -187,7 +199,7 @@ function testes(){
 
 function testesSt(){
     let data="";
-    data = doGet("http://35.180.234.134:3000/api/pTrainers/get")
+    data = doGet("https://rest-api-gym.herokuapp.com/api/pTrainers/get")
     data = data.trim();
     const users = JSON.parse(data)
 

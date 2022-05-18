@@ -28,7 +28,7 @@ function signup(){
   let password= document.getElementById("password-field").value
 
 
-  fetch("http://35.180.234.134:3000/api/users/register",{
+  fetch("https://rest-api-gym.herokuapp.com/api/users/register",{
     
     method: 'POST',
     headers:{

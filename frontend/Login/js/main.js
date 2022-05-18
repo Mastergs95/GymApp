@@ -1,8 +1,9 @@
-
+//Redirect for register
 function rdsignup(){
   window.location.replace="../Register/index.html"
 }
 
+//Display password in format text or encrypt by press eye button
 function eyePass(){
   var first_click = true;
 
@@ -21,9 +22,10 @@ function eyePass(){
   }
 }
 
+//
 async function login(){
 
-  const response= await fetch("http://35.180.234.134:3000/api/pTrainers/get")
+  const response= await fetch("https://rest-api-gym.herokuapp.com/api/pTrainers/get")
   const data = await response.json()
 }
 
@@ -36,7 +38,7 @@ function create(){
   let role = document.getElementById("roles").value
   let name = sessionStorage.getItem('name')
 
-  fetch("http://35.180.234.134:3000/api/users/login",{
+  fetch("https://rest-api-gym.herokuapp.com/api/users/login",{
     
     method: 'POST',
     headers:{
