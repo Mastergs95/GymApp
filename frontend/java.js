@@ -5,7 +5,9 @@ function doGet(url){
     return request.responseText
 }
 
-
+function viewProfile(){
+    window.location.replace("./Profile/index.html")
+}
 
 function logout(){
     var checkStatus= document.getElementById("login").textContent
@@ -13,10 +15,10 @@ function logout(){
 
     if(checkStatus==name){
         if (confirm("Are you sure you want logout?")) {
-            txt = "Bye!";
             sessionStorage.removeItem('name')
             sessionStorage.removeItem('token')
             window.location.replace="./Login/index.html"
+            window.location.reload()
           } else {
             alert("Welcome again")
           }

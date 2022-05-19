@@ -26,8 +26,13 @@
           <li><a href="./trainer.html" id="trainers" style="display: none;">Trainers</a></li>
           <li><a href="#" id="students" style="display: none;">Students</a></li>
           <li><a href="./Contact.html">Contact</a></li>
-          <li><a href="./Login/index.html" id="login" onclick="logout()"><i class="fa fa-user"></i>  Login</a></li>
-
+          <div class="dropdown">
+            <a style="color: #fff;" href="#" id="login">Login</a>
+            <div class="dropdown-content">
+              <a href="./Profile/index.html" onclick="viewProfile()"><i class="fa fa-user"></i>&nbsp; Profile </a>
+              <a href="#" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+            </div>
+          </div>
         </ul>
       </header>
 
@@ -53,15 +58,36 @@
               <h2 style="margin-top: 15px">Start define a Food Plan</h2>
               <p style="text-transform: uppercase;">Don´t forget to save your food plan</p>
 
-         <!--   <input id="numberOfWeeks" type="number" min="1"  max="" oninput="this.value = 
-              !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of Weeks"> -->
+           <input id="numberOfWeeks" type="number" min="1"  max="" oninput="this.value = 
+              !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of Weeks"> 
+              <p></p>
 
+              <input type="text" placeholder="Breakfast..">
+              <input type="text" placeholder="Mid-Morning..">
+              <input type="text" placeholder="Lunch..">
+              <p></p>
+              <input type="text" placeholder="Afternoon..">
+              <input type="text" placeholder="Mid-Afternoon..">
+              <input type="text" placeholder="Dinner">
+
+              <p></p>
               <button style="width: 70px" id="startPlan" onclick="startPlan()">Start</button>
 
               <p style="padding: 30px"></p>
 
-              <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FLisbon&src=ZHVnM2VkZDVwc2RmczRsaTdmajJzYWI5NHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23795548" 
-              style="border:solid 1px #777;margin-left: auto;; margin-right: auto;" width="900" height="700" frameborder="0" scrolling="no" id="calendar"></iframe>
+              <table id="table" style="display: none;">
+                <th>Days</th>
+                <th>Morning</th>
+                <th>Mid-Morning</th>
+                <th>Lunch</th>
+                <th>Afternoon</th>
+                <th>Mid-Afternoon</th>
+                <th>Dinner</th>
+              </table>
+
+              <!-- <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FLisbon&src=ZHVnM2VkZDVwc2RmczRsaTdmajJzYWI5NHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23795548" 
+              style="border:solid 1px #777;margin-left: auto;; margin-right: auto;" width="900" height="700" frameborder="0" scrolling="no" id="calendar"></iframe> -->
+
             </div>
 
             <script src="FoodPlan.js" defer></script>
@@ -75,7 +101,7 @@
   <footer>
     <iframe src="./Footer/index.html" frameborder="0" width="1500px" scrolling="no" height="370px"></iframe>        
   </footer>
-
+    <script src="./Profile/main.js"></script>
     <script src="FoodPlan.js" defer></script>
     <script src="java.js" defer></script>
   </body>

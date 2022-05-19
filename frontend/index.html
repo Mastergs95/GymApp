@@ -25,7 +25,14 @@
                 <li><a href="./trainer.html" id="trainers" style="display: none;">Trainers</a></li>
                 <li><a href="#" id="students" style="display: none;">Students</a></li>
                 <li><a href="./Contact.html">Contact</a></li>
-                <li><a href="./Login/index.html" id="login" onclick="logout()"><i class="fa fa-user"></i>  Login</a></li>
+
+                <div class="dropdown">
+                  <a style="color: #fff;" href="#" id="login">Login</a>
+                  <div class="dropdown-content">
+                    <a href="./Profile/index.html" onclick="viewProfile()"><i class="fa fa-user"></i>&nbsp; Profile </a>
+                    <a href="#" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+                  </div>
+                </div>
 
               </ul>
           </header>
@@ -59,7 +66,7 @@
               navigation.classList.toggle('active');
           }
       </script>
-
+          <script src="./Profile/main.js"></script>
           <script src="java.js"></script>
   </body>
 </html>
