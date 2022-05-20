@@ -1,4 +1,5 @@
-function checkLogin(){
+async function checkLogin(){
+
     var token = "";
     var name="";
     var id="";
@@ -16,8 +17,8 @@ function checkLogin(){
         document.getElementById("login").href=""
         document.getElementById("login").textContent=name
         document.getElementById("login").style.animationName
-        loadDetails()
-        
+        await loadDetails()
+        await takeTrainers()
     }
     else{
         window.location.replace("../Login/index.html")
@@ -30,6 +31,23 @@ function doGet(url){
     request.open("GET", url, false)
     request.send()
     return request.responseText
+}
+
+function logout(){
+    var checkStatus= document.getElementById("login").textContent
+    var name = sessionStorage.getItem('name')
+
+    if(checkStatus==name){
+        if (confirm("Are you sure you want logout?")) {
+            sessionStorage.removeItem('name')
+            sessionStorage.removeItem('token')
+            window.location.replace="../Login/index.html"
+            window.location.reload()
+          } else {
+            alert("Welcome again")
+          }
+          
+    }
 }
 
 
@@ -74,7 +92,6 @@ function loadDetails(){
                 if(user.msg=="User not found!"){
 
                 }else{
-                    document.getElementById('nameRole').value=user.name
                     document.getElementById('role').value="Student"
                 }
             }catch (error){
@@ -82,7 +99,6 @@ function loadDetails(){
             }
             
         }else{
-            document.getElementById('nameRole').value=user.name
             document.getElementById('role').value="Personal Trainer"
         }
 
@@ -90,3 +106,82 @@ function loadDetails(){
         
     }
 }
+
+async function takeTrainers(){
+    let role = document.getElementById('role').value
+    
+    if(role=="Student"){
+        let data="";
+        data = doGet("https://rest-api-gym.herokuapp.com/api/pTrainers/get")
+        data = data.trim();
+        const users = JSON.parse(data)
+  
+        users.forEach(element => {
+        createLineTrainer(element)
+        });
+
+    }else{
+        document.getElementById('ptrainer').style.display="none"
+        document.getElementById('save').style.display="none"
+    }
+
+    
+  }
+  
+  function createLineTrainer(trainer){
+  
+    let line=document.getElementById("ptrainer")
+    let optName= document.createElement("option")
+  
+    optName.innerHTML=trainer.name
+    optName.value=trainer.name
+  
+    line.appendChild(optName)
+  }
+
+  function saveProfile(){
+      let trainer = document.getElementById('ptrainer')
+
+      fetch("https://rest-api-gym.herokuapp.com/api/students/update",{
+    
+    method: 'POST',
+    headers:{
+      'Accept': 'application/json',
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify({
+      email: username,
+      password: password,
+      role:role,
+      name:name
+    })
+  })
+  .then(response=>{
+    if(!response.ok){
+      throw Error ("Error")
+    }
+    return response.json()
+  })
+  .then(data=>{
+
+    console.log(data)
+
+    if(data.message=="Login successful!"){
+      
+      sessionStorage.setItem('token', data.token);
+      sessionStorage.setItem('name', data.name);
+      sessionStorage.setItem('id', data.id);
+      alert(data.message)
+      window.location.replace("../index.html");
+
+    }else if(data.message=="No user found!"){
+      alert(data.message)
+    }else{
+      alert(data.message)
+    
+    }
+  })
+  .catch(error=>{
+    console.log(error)
+  })
+  }

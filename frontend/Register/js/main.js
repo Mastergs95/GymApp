@@ -17,6 +17,15 @@ function eyePass(){
   }
 }
 
+function doGet(url){
+  let request = new XMLHttpRequest()
+  request.open("GET", url, false)
+  request.send()
+  return request.responseText
+}
+
+
+
 
 
 //Login and Create user by role
@@ -26,7 +35,7 @@ function signup(){
   let lastname=document.getElementById("lastname").value
   let username=document.getElementById("user").value
   let password= document.getElementById("password-field").value
-
+  
 
   fetch("https://rest-api-gym.herokuapp.com/api/users/register",{
     
@@ -57,7 +66,8 @@ function signup(){
       alert("Password is required!")
     }
     if(!response.ok){
-      throw Error ("Error")
+      throw Error ("Try with another email")
+      
     }
 
     return response.json()
@@ -77,7 +87,7 @@ function signup(){
 
     }else if(data.message=="An error occurred!"){
 
-      alert(data.message+" Try with another email")
+      alert(data.message + " Try with another email")
 
     }else{
       alert(data.message)
