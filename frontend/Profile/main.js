@@ -133,27 +133,27 @@ async function takeTrainers(){
     let line=document.getElementById("ptrainer")
     let optName= document.createElement("option")
   
-    optName.innerHTML=trainer.name
-    optName.value=trainer.name
+    optName.innerHTML=trainer.name 
+    optName.value=trainer._id
   
     line.appendChild(optName)
   }
 
   function saveProfile(){
-      let trainer = document.getElementById('ptrainer')
+      let trainer = document.getElementById('ptrainer').value
+      let id = sessionStorage.getItem('id')
+      data = doGet("https://rest-api-gym.herokuapp.com/api/students/getByUser/" + id)
+      const user = JSON.parse(data)
 
-      fetch("https://rest-api-gym.herokuapp.com/api/students/update",{
+      fetch("https://rest-api-gym.herokuapp.com/api/students/update/" + user._id,{
     
-    method: 'POST',
+    method: 'PATCH',
     headers:{
       'Accept': 'application/json',
       'Content-Type':'application/json'
     },
     body: JSON.stringify({
-      email: username,
-      password: password,
-      role:role,
-      name:name
+      personaltrainers:trainer,
     })
   })
   .then(response=>{
@@ -166,20 +166,6 @@ async function takeTrainers(){
 
     console.log(data)
 
-    if(data.message=="Login successful!"){
-      
-      sessionStorage.setItem('token', data.token);
-      sessionStorage.setItem('name', data.name);
-      sessionStorage.setItem('id', data.id);
-      alert(data.message)
-      window.location.replace("../index.html");
-
-    }else if(data.message=="No user found!"){
-      alert(data.message)
-    }else{
-      alert(data.message)
-    
-    }
   })
   .catch(error=>{
     console.log(error)
