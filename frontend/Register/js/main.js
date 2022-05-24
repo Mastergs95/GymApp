@@ -65,9 +65,12 @@ function signup(){
     if(!password){
       alert("Password is required!")
     }
+    if(String(password).length<8){
+      alert("The password need to be more than 8 characters")
+    }
+    
     if(!response.ok){
       throw Error ("Try with another email")
-      
     }
 
     return response.json()
