@@ -5,5 +5,5 @@ async function sendEmail(){
 
     var fsubject= await name + " - " + await subject
 
-    window.open(`mailto:test@example.com?subject=${fsubject}&body=${body}`);
+    window.open(`mailto:gymapp.supp@gmail.com?subject=${fsubject}&body=${body}`);
 }

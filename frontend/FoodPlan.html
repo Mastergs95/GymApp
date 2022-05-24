@@ -41,7 +41,7 @@
               color: black;
               border-radius: 12px;
               height: 2000px;
-              width: 150vh;
+              width: 200vh;
               background-color: white;    
               text-align: center;
               margin-left: auto;
@@ -60,20 +60,20 @@
 
            <!-- <input id="numberOfWeeks" type="number" min="1"  max="" oninput="this.value = 
               !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of Weeks">  -->
-              <p></p>
+              <p style="padding: 20px;"></p>
             <div id="plan">
-              <input type="text" placeholder="Breakfast.." id="br">
-              <input type="text" placeholder="Mid-Morning.." id="mm">
-              <input type="text" placeholder="Lunch.." id="lc">
+              <input type="text" placeholder="Breakfast.." id="br" maxlength="30">
+              <input type="text" placeholder="Mid-Morning.." id="mm" maxlength="30">
+              <input type="text" placeholder="Lunch.." id="lc" maxlength="30">
               <p></p>
-              <input type="text" placeholder="Afternoon.." id="aft">
-              <input type="text" placeholder="Mid-Afternoon.." id="ma">
-              <input type="text" placeholder="Dinner" id="dn"> 
+              <input type="text" placeholder="Afternoon.." id="aft" maxlength="30">
+              <input type="text" placeholder="Mid-Afternoon.." id="ma" maxlength="30">
+              <input type="text" placeholder="Dinner" id="dn" maxlength="30"> 
             </div>
               <p></p>
               <button style="width: 70px" id="startPlan" onclick="startPlan()">Start</button>
               <button style="width: 70px; display: initial;" id="savePlan" onclick="savePlan()">Save</button>
-
+              
               <p style="padding: 30px"></p>
 
               <table id="table">

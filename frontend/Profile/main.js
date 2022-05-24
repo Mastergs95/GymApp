@@ -123,6 +123,7 @@ async function takeTrainers(){
     }else{
         document.getElementById('ptrainer').style.display="none"
         document.getElementById('save').style.display="none"
+        document.getElementById('pts').style.display="none"
     }
 
     

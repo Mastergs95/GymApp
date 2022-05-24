@@ -15,7 +15,6 @@ function startPlan(){
         } else {
             //document.getElementById("calendar").style.display="none";
             document.getElementById("startPlan").textContent="Start"
-            document.getElementById("myDiv").style.opacity=0.8
             first_click = true;
 
         }
