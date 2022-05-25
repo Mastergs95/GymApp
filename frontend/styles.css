@@ -270,7 +270,7 @@ header .navigation li a:hover
 
 .container-equip{
     margin-top: 30px;
-    background-color: #ffd051;
+    background: linear-gradient(#ffb700, #fff18a);
 }
 
 .flip-card {

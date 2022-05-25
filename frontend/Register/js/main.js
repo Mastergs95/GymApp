@@ -67,6 +67,7 @@ function signup(){
     }
     if(String(password).length<8){
       alert("The password need to be more than 8 characters")
+      return
     }
     
     if(!response.ok){

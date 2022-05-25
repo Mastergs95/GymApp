@@ -146,6 +146,7 @@ async function takeTrainers(){
       data = doGet("https://rest-api-gym.herokuapp.com/api/students/getByUser/" + id)
       const user = JSON.parse(data)
 
+//Update Personal Trainer in table Students
       fetch("https://rest-api-gym.herokuapp.com/api/students/update/" + user._id,{
     
     method: 'PATCH',
@@ -154,21 +155,50 @@ async function takeTrainers(){
       'Content-Type':'application/json'
     },
     body: JSON.stringify({
-      personaltrainers:trainer,
+      PersonalTrainers:trainer,
     })
   })
   .then(response=>{
     if(!response.ok){
       throw Error ("Error")
     }
+
+///Update Student in Table PersonalTrainers
+    fetch("https://rest-api-gym.herokuapp.com/api/pTrainers/update/" + trainer,{
+    
+      method: 'PATCH',
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({
+        Students:user._id,
+      })
+    }).then(response=>{
+      if(!response.ok){
+        throw Error ("Error")
+      }
+      return response.json()
+
+    }).then(data=>{
+
+      alert(data.message)
+
+    }).catch(error=>{
+
+      console.log(error)
+
+    })
+///
     return response.json()
   })
   .then(data=>{
 
-    console.log(data)
+    alert(data.message)
 
   })
   .catch(error=>{
     console.log(error)
   })
+  //
   }
