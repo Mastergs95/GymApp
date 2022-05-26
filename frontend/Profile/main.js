@@ -2,6 +2,7 @@ async function checkLogin(){
   var token = "";
   var name="";
   var id="";
+  var status="";
   id = sessionStorage.getItem('id')
   token = sessionStorage.getItem('token');
   name = sessionStorage.getItem('name');
@@ -9,17 +10,7 @@ async function checkLogin(){
 
 
   if(String(token).length>30){
-
-      const role=checkRole()
-      if(role=="Trainer"){
-          try{
-          document.getElementById("Students").href="../ViewStudents.html"
-          document.getElementById("Students").style.display="block"
-          }catch(error){
-
-          }
-      }
-
+      status="logged"
       document.getElementById("login").textContent=name
       document.getElementById("login").style.animationName
       await loadDetails()
@@ -28,6 +19,7 @@ async function checkLogin(){
   else{
       window.location.replace("../Login/index.html")
   }
+  return status;
 }
 
   function checkRole(){

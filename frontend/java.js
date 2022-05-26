@@ -66,7 +66,7 @@ function contactName(){
     
 }
 
-/* async function getIpClient() {
+async function getIpClient() {
     try {
         const response = await axios.get('https://ipinfo.io/json');
         const ip = response.data.ip
@@ -79,15 +79,15 @@ function contactName(){
                 document.getElementById('manage').style.display="inline-block"
 
             }
+        }else{
+            window.location.replace("404.html")
         }
     } catch (error) {
       console.error(error);
     }
-  }
-  
-  getIpClient(); */
+}
 
-function loadStudentsPage(){
+/* function loadStudentsPage(){
     const status = checkLogin()
     if(status=="logged"){
 
@@ -103,7 +103,7 @@ function loadStudentsPage(){
     }
 }
 }
-
+ */
 function checkLogin(){
     var token = "";
     var name="";
@@ -120,16 +120,6 @@ function checkLogin(){
         status="logged"
         document.getElementById("login").textContent=name
         document.getElementById("login").style.animationName
-        const role=checkRole()
-    if(role=="Trainer"){
-        try{
-            document.getElementById("Students").href="./ViewStudents.html"
-            document.getElementById("Students").style.display="block"
-            }catch(error){
-            }
-    }else{
-        window.location.replace("./404.html")
-    }
 
     }else{
         window.location.replace("./Login/index.html")
