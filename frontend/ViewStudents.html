@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/c9a4a6f0dc.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   </head>
   <body onload="checkLogin()">
@@ -44,22 +43,26 @@
                     <a href="#" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
                   </div>
                 </div>
-                <li><a id="manage" style="display:none">Manage</a></li>
 
               </ul>
           </header>
-          <div class="content">
-              <div class="contentBx">
-                  <h2>Build Perfect Body</br>
-                    With clean Mind</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula eros, mollis eu pellentesque sed,
-                        aliquam a purus. Etiam porta turpis ligula. Cras gravida semper tincidunt. Maecenas tempor vehicula quam, ac
-                        porttitor lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin hendrerit tristique augue ut molestie.
-                        Aenean sed pulvinar felis. Proin mollis volutpat libero ut posuere. Vestibulum vel placerat turpis. Quisque bibendum dictum enim, 
-                        non consectetur odio malesuada ac.</p>
-                        <a href="#">Get Started</a>
-              </div>
+
+          <style>
+            .myDiv {
+              color: black;
+              border-radius: 12px;
+              height: 2000px;
+              width: 200vh;
+              background-color: white;    
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 60px;
+              opacity: 0.8;
+            }
+          </style>
+
+          <div class="myDiv" id="myDiv">
 
           </div>
 
