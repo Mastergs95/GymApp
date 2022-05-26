@@ -1,29 +1,58 @@
 async function checkLogin(){
+  var token = "";
+  var name="";
+  var id="";
+  id = sessionStorage.getItem('id')
+  token = sessionStorage.getItem('token');
+  name = sessionStorage.getItem('name');
+  role = sessionStorage.getItem('role');
 
-    var token = "";
-    var name="";
-    var id="";
-    id = sessionStorage.getItem('id')
-    token = sessionStorage.getItem('token');
-    name = sessionStorage.getItem('name');
-    role = sessionStorage.getItem('role');
 
-    if(token){
-        if(id=="627e98d6dfe3636ae9d10d28"){
-            document.getElementById("trainers").style.display="block"
-            document.getElementById("students").style.display="block"
-        }
-        //document.getElementById("trainers").href="./trainer.html"
-        document.getElementById("login").href=""
-        document.getElementById("login").textContent=name
-        document.getElementById("login").style.animationName
-        await loadDetails()
-        await takeTrainers()
-    }
-    else{
-        window.location.replace("../Login/index.html")
-    }
+  if(String(token).length>30){
+
+      const role=checkRole()
+      if(role=="Trainer"){
+          try{
+          document.getElementById("Students").href="../ViewStudents.html"
+          document.getElementById("Students").style.display="block"
+          }catch(error){
+
+          }
+      }
+
+      document.getElementById("login").textContent=name
+      document.getElementById("login").style.animationName
+      await loadDetails()
+      await takeTrainers()
   }
+  else{
+      window.location.replace("../Login/index.html")
+  }
+}
+
+  function checkRole(){
+    let id = sessionStorage.getItem('id')
+    let role="";
+    try{
+        data = doGet("https://rest-api-gym.herokuapp.com/api/students/getByUser/" + id)
+        const user = JSON.parse(data)
+        role="Student"
+
+        if(user.msg=="User not found!"){
+            try{
+            data = doGet("https://rest-api-gym.herokuapp.com/api/pTrainers/getByUser/" + id)
+            const user = JSON.parse(data)
+            role="Trainer"
+
+            }catch(error){
+                console.log(error)
+            }
+        }
+    } catch(error){
+        console.log(error)
+    }
+    return role;
+}
 
 
 function doGet(url){

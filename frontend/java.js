@@ -6,6 +6,30 @@ function doGet(url){
     return request.responseText
 }
 
+function checkRole(){
+    let id = sessionStorage.getItem('id')
+    let role="";
+    try{
+        data = doGet("https://rest-api-gym.herokuapp.com/api/students/getByUser/" + id)
+        const user = JSON.parse(data)
+        role="Student"
+
+        if(user.msg=="User not found!"){
+            try{
+            data = doGet("https://rest-api-gym.herokuapp.com/api/pTrainers/getByUser/" + id)
+            const user = JSON.parse(data)
+            role="Trainer"
+
+            }catch(error){
+                console.log(error)
+            }
+        }
+    } catch(error){
+        console.log(error)
+    }
+    return role;
+}
+
 
 function viewProfile(){
     window.location.replace("./Profile/index.html")
@@ -18,6 +42,7 @@ function logout(){
     if(checkStatus==name){
         if (confirm("Are you sure you want logout?")) {
             sessionStorage.removeItem('name')
+            sessionStorage.removeItem('id')
             sessionStorage.removeItem('token')
             window.location.replace="./Login/index.html"
             window.location.reload()
@@ -62,30 +87,54 @@ function contactName(){
   
   getIpClient(); */
 
+function loadStudentsPage(){
+    const status = checkLogin()
+    if(status=="logged"){
+
+    const role=checkRole()
+    if(role=="Trainer"){
+        try{
+            document.getElementById("Students").href="./ViewStudents.html"
+            document.getElementById("Students").style.display="block"
+            }catch(error){
+            }
+    }else{
+        window.location.replace("./404.html")
+    }
+}
+}
+
 function checkLogin(){
     var token = "";
     var name="";
     var id="";
+    var status="";
     id = sessionStorage.getItem('id')
     token = sessionStorage.getItem('token');
     name = sessionStorage.getItem('name');
     role = sessionStorage.getItem('role');
     contactName()
 
-    if(token){
-        if(id=="627e98d6dfe3636ae9d10d28"){
-            document.getElementById("trainers").style.display="block"
-            document.getElementById("students").style.display="block"
-        }
-        //document.getElementById("trainers").href="./trainer.html"
+    if(String(token).length>30){
+
+        status="logged"
         document.getElementById("login").textContent=name
         document.getElementById("login").style.animationName
-
-        
+        const role=checkRole()
+    if(role=="Trainer"){
+        try{
+            document.getElementById("Students").href="./ViewStudents.html"
+            document.getElementById("Students").style.display="block"
+            }catch(error){
+            }
+    }else{
+        window.location.replace("./404.html")
     }
-    else{
+
+    }else{
         window.location.replace("./Login/index.html")
     }
+    return status;
   }
 
 

@@ -9,7 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+    <script src="https://kit.fontawesome.com/c9a4a6f0dc.js" crossorigin="anonymous"></script>
+  </head>
+
+
   <body onload="checkLogin()">
     <section>
         <header>
@@ -17,19 +21,26 @@
             <div class="toggleMenu" onclick="toggleMenu()"></div>
             <ul class="navigation">
               <li><a href="../index.html">Home</a></li>
-              <li><a href="../TrainPlan.html">Training plan</a></li>
-              <li><a href="../FoodPlan.html">Food plan</a></li>
-              <li><a href="../trainer.html" id="trainers" style="display: none;">Trainers</a></li>
-              <li><a href="#" id="students" style="display: none;">Students</a></li>
+
+              <div class="dropdown">
+                  <li><a style="color: #fff;" href="#" id="Plans">Plans</a></li>
+                  <div  style="min-width: 180px;" class="dropdown-content">
+                    <a href="../TrainPlan.html" ><i class="fa-solid fa-dumbbell"></i>&nbsp; Training Plan </a>
+                    <a href="../FoodPlan.html"><i class="fa-solid fa-plate-wheat"></i>&nbsp; Food Plan</a>
+                  </div>
+                </div>
+
+              <li><a id="Students" style="display: none;">Students</a></li>
               <li><a href="../Contact.html">Contact</a></li>
 
               <div class="dropdown">
-                <a style="color: #fff;" href="#" id="login">Login</a>
+                <li><a style="color: #fff;" href="#" id="login">Login</a></li>
                 <div class="dropdown-content">
                   <a href="./index.html" onclick="viewProfile()"><i class="fa fa-user"></i>&nbsp; Profile </a>
                   <a href="#" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
                 </div>
               </div>
+              <li><a id="manage" style="display:none">Manage</a></li>
 
             </ul>
         </header>
