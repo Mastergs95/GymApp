@@ -6,15 +6,18 @@ function doGet(url){
     return request.responseText
 }
 
-	data = doGet("https://rest-api-gym.herokuapp.com/api/students/get")
-    const users = JSON.parse(data)
-	var users_name=[]
-	const users_id=[]
 
-	users.forEach(element => {
-        users_name.push(element.name)
-        users_id.push(element._id)
-    });
+data = doGet("https://rest-api-gym.herokuapp.com/api/students/get")
+const users = JSON.parse(data)
+
+var users_name=[]
+const users_id=[]
+
+users.forEach(element => {
+	users_name.push(element.name)
+	users_id.push(element._id)
+});
+
 const list_items = users_name;
 
 const list_element = document.getElementById('list');
@@ -22,6 +25,7 @@ const pagination_element = document.getElementById('pagination');
 
 let current_page = 1;
 let rows = 5;
+
 
 function DisplayList (items, wrapper, rows_per_page, page) {
 	wrapper.innerHTML = "";
@@ -47,8 +51,10 @@ function listenClick(){
 	var descendentes = document.querySelectorAll(".item");
 	for (var i = 0; i < descendentes.length; i++) {
     descendentes[i].addEventListener("click", function (e) {
+
 		data = doGet("https://rest-api-gym.herokuapp.com/api/students/get/"+ this.id)
     	const user = JSON.parse(data)
+
 		localStorage.setItem('stId',user._id)
 		localStorage.setItem('stIdTrainer',user.PersonalTrainers)
 		window.location=("./data.html")

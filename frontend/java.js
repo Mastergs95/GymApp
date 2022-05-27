@@ -87,7 +87,20 @@ async function getIpClient() {
     }
 }
 
-/* function loadStudentsPage(){
+function displayNavStudents(){
+    const role = checkRole()
+    if(role=="Trainer"){
+        try{
+            document.getElementById("Students").href="./Students/ViewStudents.html"
+            document.getElementById("Students").style.display="block"
+            }catch(error){
+            }
+    }else{
+
+    }
+}
+
+function loadStudentsPage(){
     const status = checkLogin()
     if(status=="logged"){
 
@@ -103,7 +116,7 @@ async function getIpClient() {
     }
 }
 }
- */
+
 function checkLogin(){
     var token = "";
     var name="";
@@ -114,6 +127,7 @@ function checkLogin(){
     name = sessionStorage.getItem('name');
     role = sessionStorage.getItem('role');
     contactName()
+    displayNavStudents()
 
     if(String(token).length>30){
 

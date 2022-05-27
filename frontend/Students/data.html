@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/c9a4a6f0dc.js" crossorigin="anonymous"></script>
+</head>
+<body onload="loadStudentsPage()">
+    <section>
+    <header>
+        <a href="#" class="logo">Fitness</a>
+        <div class="toggleMenu" onclick="toggleMenu()"></div>
+        <ul class="navigation">
+          <li><a href="../index.html">Home</a></li>
+
+          <div class="dropdown">
+              <li><a style="color: #fff;" href="#" id="Plans">Plans</a></li>
+              <div  style="min-width: 180px;" class="dropdown-content">
+                <a href="../TrainPlan.html" ><i class="fa-solid fa-dumbbell"></i>&nbsp; Training Plan </a>
+                <a href="../FoodPlan.html"><i class="fa-solid fa-plate-wheat"></i>&nbsp; Food Plan</a>
+              </div>
+            </div>
+
+          <li><a id="Students" style="display: none;">Students</a></li>
+          <li><a href="../Contact.html">Contact</a></li>
+
+          <div class="dropdown">
+            <li><a style="color: #fff;" href="#" id="login">Login</a></li>
+            <div class="dropdown-content">
+              <a href="../Profile/index.html" onclick="viewProfile()"><i class="fa fa-user"></i>&nbsp; Profile </a>
+              <a href="#" onclick="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+            </div>
+          </div>
+
+        </ul>
+    </header>
+
+
+
+<div class="bigContainer">
+        <div class="photoContainer">
+            <img src="../resources/background.jpg"><br>
+            <label id="name"></label><br>
+            <label id="email">joao@gmail.com</label>
+            <p></p>
+            <div class="underphoto">
+                <label class="labelPt">Personal Trainer : </label><br>
+                <label class="labelDate">Start Date : </label>
+            </div>
+        </div>
+
+          <div class="myDiv" id="myDiv">
+             <h2 style="margin: 20px;font-size: 20px;font-weight: 700;">Student Details</h2>
+            <div class="containerDetails">
+                <table class="info">
+                    <tr>
+                        <th>Name</th>
+                        <td class="sep">:</td>
+                        <td class="data">João</td>
+                    </tr>
+                    <tr>
+                        <th>IMC</th>
+                        <td class="sep">:</td>
+                        <td class="data">18.7</td>
+                    </tr>
+    
+                </table>
+               <!--  <div class="containerNames">
+                    <label>Name</label><br>
+                    <input type="text">
+                </div>
+                <div class="containerSurname">
+                    <label>Surname</label><br>
+                    <input type="text">
+                </div> -->
+            </div> 
+        </div>
+    </div>
+        </section>
+
+        <footer>
+            <iframe src="../Footer/index.html" frameborder="0" width="1500px" scrolling="no" height="370px"></iframe>
+        </footer>
+
+        <script type="text/javascript">
+            function toggleMenu(){
+                const toggleMenu = document.querySelector('.toggleMenu');
+                const navigation = document.querySelector('.navigation');
+                toggleMenu.classList.toggle('active');
+                navigation.classList.toggle('active');
+            }
+        </script>
+    <script src="data.js"></script>
+    <script src="../java.js"></script>
+</body>
+
+</html>

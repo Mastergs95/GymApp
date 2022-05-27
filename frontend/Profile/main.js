@@ -1,3 +1,16 @@
+function displayNavStudents(){
+  const role = checkRole()
+  if(role=="Trainer"){
+      try{
+          document.getElementById("Students").href="../ViewStudents.html"
+          document.getElementById("Students").style.display="block"
+          }catch(error){
+          }
+  }else{
+
+  }
+}
+
 async function checkLogin(){
   var token = "";
   var name="";
@@ -7,7 +20,7 @@ async function checkLogin(){
   token = sessionStorage.getItem('token');
   name = sessionStorage.getItem('name');
   role = sessionStorage.getItem('role');
-
+  displayNavStudents()
 
   if(String(token).length>30){
       status="logged"

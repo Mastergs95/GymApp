@@ -9,7 +9,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/c9a4a6f0dc.js" crossorigin="anonymous"></script>
 
@@ -50,26 +51,28 @@
             .myDiv {
               color: black;
               border-radius: 12px;
-              height: 2000px;
+              height: 1000px;
               width: 200vh;
               background-color: white;    
               text-align: center;
               margin-left: auto;
               margin-right: auto;
               margin-top: 60px;
-              opacity: 0.8;
+              opacity: 1;
             }
           </style>
 
           <div class="myDiv" id="myDiv">
-
+            <main>
+            <div class="list" id="list"></div>
+            <div class="pagenumbers" id="pagination"></div>
+            </main>
           </div>
 
       </section>
 
       <footer>
-        <iframe src="./Footer/index.html" frameborder="0" width="1500px" scrolling="no" height="370px"></iframe>
-        
+        <iframe src="../Footer/index.html" frameborder="0" width="1500px" scrolling="no" height="370px"></iframe>
     </footer>
 
       <script type="text/javascript">
@@ -80,8 +83,8 @@
               navigation.classList.toggle('active');
           }
       </script>
-          <script src="./Profile/main.js"></script>
-          <script src="java.js"></script>
+          <script src="../java.js"></script>
+          <script src="main.js"></script>
 
   </body>
 </html>
