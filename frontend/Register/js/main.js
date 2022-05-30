@@ -24,6 +24,11 @@ function doGet(url){
   return request.responseText
 }
 
+document.addEventListener('keydown', function (event) {
+  if (event.keyCode !== 13) return;
+  signup()
+});
+
 
 
 

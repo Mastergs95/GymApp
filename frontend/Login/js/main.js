@@ -83,3 +83,8 @@ function create(){
 
 
 }
+
+document.addEventListener('keydown', function (event) {
+  if (event.keyCode !== 13) return;
+  create()
+});
