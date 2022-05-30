@@ -2,7 +2,7 @@ function displayNavStudents(){
   const role = checkRole()
   if(role=="Trainer"){
       try{
-          document.getElementById("Students").href="../ViewStudents.html"
+          document.getElementById("Students").href="../Students/ViewStudents.html"
           document.getElementById("Students").style.display="block"
           }catch(error){
           }
@@ -127,6 +127,10 @@ function loadDetails(){
 
                 }else{
                     document.getElementById('role').value="Student"
+                    document.getElementById('age').value=user.age
+                    document.getElementById('height').value=user.height
+                    document.getElementById('weight').value=user.weight
+                    
                 }
             }catch (error){
                 
@@ -134,6 +138,7 @@ function loadDetails(){
             
         }else{
             document.getElementById('role').value="Personal Trainer"
+            
         }
 
     }catch(error){
@@ -151,13 +156,15 @@ async function takeTrainers(){
         const users = JSON.parse(data)
   
         users.forEach(element => {
-        createLineTrainer(element)
+          createLineTrainer(element)
         });
 
     }else{
         document.getElementById('ptrainer').style.display="none"
         document.getElementById('save').style.display="none"
         document.getElementById('pts').style.display="none"
+        document.getElementById('ega').style.display="none"
+        document.getElementById('cmkg').style.display="none"
     }
 
     
@@ -175,6 +182,9 @@ async function takeTrainers(){
   }
 
   function saveProfile(){
+      let age = document.getElementById("age").value;
+      let height = document.getElementById("height").value;
+      let weight = document.getElementById("weight").value; 
       let trainer = document.getElementById('ptrainer').value
       let id = sessionStorage.getItem('id')
       data = doGet("https://rest-api-gym.herokuapp.com/api/students/getByUser/" + id)
@@ -190,6 +200,9 @@ async function takeTrainers(){
     },
     body: JSON.stringify({
       PersonalTrainers:trainer,
+      height:height,
+      weight:weight,
+      age:age
     })
   })
   .then(response=>{

@@ -49,42 +49,60 @@
             <label id="email">joao@gmail.com</label>
             <p></p>
             <div class="underphoto">
-                <label class="labelPt">Personal Trainer : </label><br>
-                <label class="labelDate">Start Date : </label>
+                <label class="labelPt" style="font-weight:bold">Personal Trainer : &nbsp;<label class="labelPtdata" style="font-weight:400"></label></label><br>
+                <label class="labelDate" style="font-weight:bold">Start Date : &nbsp;</label><label class="labelPtdata"></label>
             </div>
         </div>
 
-          <div class="myDiv" id="myDiv">
-             <h2 style="margin: 20px;font-size: 20px;font-weight: 700;">Student Details</h2>
+        <div class="myDiv" id="myDiv">
+            <h2 style="margin: 15px;font-size: 20px;font-weight: 700;" id="h2"><i class="fa-solid fa-clone" style="cursor:pointer;"></i>&nbsp;Student Details</h2>
             <div class="containerDetails">
                 <table class="info">
                     <tr>
                         <th>Name</th>
                         <td class="sep">:</td>
-                        <td class="data">João</td>
+                        <td class="data" id="tdName"></td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td class="sep">:</td>
+                        <td class="data" id="tdAge"></td>
+                    </tr>
+                    <tr>
+                        <th>Height</th>
+                        <td class="sep">:</td>
+                        <td class="data" id="tdHeight"></td>
+                    </tr>
+                    <tr>
+                        <th>Weight</th>
+                        <td class="sep">:</td>
+                        <td class="data" id="tdWeight"></td>
                     </tr>
                     <tr>
                         <th>IMC</th>
                         <td class="sep">:</td>
-                        <td class="data">18.7</td>
+                        <td class="data" id="tdIMC" style="color: white;"></td>
                     </tr>
-    
                 </table>
-               <!--  <div class="containerNames">
-                    <label>Name</label><br>
-                    <input type="text">
-                </div>
-                <div class="containerSurname">
-                    <label>Surname</label><br>
-                    <input type="text">
-                </div> -->
             </div> 
+            <ul style="text-align: center;margin-top: 15px;">
+                <li class="indice"><a style="background-color: #b3d7ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>&nbsp;Thinness</li>
+                <li class="indice"><a style="background-color: green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>&nbsp;Healthy</li>
+                <li class="indice"><a style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>&nbsp;Overweight</li>
+                <li class="indice"><a style="background-color: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>&nbsp;Grade Obesity l</li>
+                <li class="indice"><a style="background-color: red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>&nbsp;Grade Obesity ll</li>
+                <li class="indice"><a style="background-color: purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>&nbsp;Grade Obesity lll</li>
+            </ul>
+        </div>
+        <div class="footDetails">
+            <h2 style="margin: 15px;font-size: 20px;font-weight: 700;" id="h2"><i class="fa-solid fa-clone" style="cursor:pointer"></i>&nbsp;Additional Information</h2>
+            <li style="margin-left: 35px;">Ea pariatur culpa 33 neque ratione sed temporibus architecto eos amet voluptas qui quaerat quia aut voluptas soluta ut sint mollitia? Est animi iure ad autem molestiae et autem harum a obcaecati facilis non assumenda dignissimos in incidunt debitis.</li>
         </div>
     </div>
-        </section>
+</section>
 
         <footer>
-            <iframe src="../Footer/index.html" frameborder="0" width="1500px" scrolling="no" height="370px"></iframe>
+            <iframe src="../Footer/index.html" frameborder="0" width="1500px" scrolling="no"></iframe>
         </footer>
 
         <script type="text/javascript">
