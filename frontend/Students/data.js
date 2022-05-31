@@ -52,3 +52,21 @@ function imcClassification(imc){
         document.getElementById("tdIMC").style.background="purple"
     }
 }
+
+function logout2(){
+    var checkStatus= document.getElementById("login").textContent
+    var name = sessionStorage.getItem('name')
+
+    if(checkStatus==name){
+        if (confirm("Are you sure you want logout?")) {
+            sessionStorage.removeItem('name')
+            sessionStorage.removeItem('id')
+            sessionStorage.removeItem('token')
+            window.location="../Login/index.html"
+            window.location.reload()
+          } else {
+            alert("Welcome again")
+          }
+          
+    }
+}

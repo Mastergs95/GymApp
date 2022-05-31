@@ -6,17 +6,25 @@ function doGet(url){
     return request.responseText
 }
 
-
-data = doGet("https://rest-api-gym.herokuapp.com/api/students/get")
+let idTrainer=sessionStorage.getItem('id')
+data = doGet("https://rest-api-gym.herokuapp.com/api/pTrainers/getByUser/" + idTrainer)
 const users = JSON.parse(data)
-
+console.log(users.Students)
 var users_name=[]
 const users_id=[]
 
-users.forEach(element => {
-	users_name.push(element.name)
-	users_id.push(element._id)
+users.Students.forEach(element => {
+	console.log(element)
+	data = doGet("https://rest-api-gym.herokuapp.com/api/Students/get/"+element)
+	students_dt = JSON.parse(data)
+	users_name.push(students_dt.name)
+	users_id.push(students_dt._id)
 });
+
+
+
+
+
 
 const list_items = users_name;
 
@@ -94,3 +102,21 @@ function PaginationButton (page, items) {
 
 DisplayList(list_items, list_element, rows, current_page);
 SetupPagination(list_items, pagination_element, rows);
+
+function logout2(){
+    var checkStatus= document.getElementById("login").textContent
+    var name = sessionStorage.getItem('name')
+
+    if(checkStatus==name){
+        if (confirm("Are you sure you want logout?")) {
+            sessionStorage.removeItem('name')
+            sessionStorage.removeItem('id')
+            sessionStorage.removeItem('token')
+            window.location.replace="../Login/index.html"
+           	window.location.reload()
+          } else {
+            alert("Welcome again")
+          }
+          
+    }
+}
